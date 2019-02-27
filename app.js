@@ -1,6 +1,6 @@
 const yargs = require('yargs');
 
-const {Army, defenseArmy} = require('./army-info/army-info');
+const {Army, getDefenseArmyCombination} = require('./simulation/army-simulation');
 
 const argv = yargs
             .command('attack', 'attack with your army', {
@@ -38,12 +38,14 @@ let shanArmy = new Army(100, 50, 10, 5);
 let falconeArmy = new Army(300, 200, 40, 20);
 
 // Validate attack Army inputt by user
-falconeArmy.ValidateArmy(new Army(argv.h, argv.e, argv.t, argv.g), (res) => {
+falconeArmy.ValidateArmy(new Army(argv.h, argv.e, argv.t, argv.g), (attackArmy) => {
 
-    if (!res.isValid) {
-        return console.log('Error: ' + res.error);
+    // Print Error to console and exit
+    if (!attackArmy.isValid) {
+        return console.log('Error: ' + attackArmy.error);
     }
 
-    let result = defenseArmy(res.army, shanArmy);
-    console.log(result);
+    // get defense army combination and output result to console
+    let warResult = getDefenseArmyCombination(attackArmy.army, shanArmy);
+    console.log(warResult);
 });
