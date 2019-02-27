@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha **/*.test.js"
   },
-  "author": "Gaurav Aditya",
+  "author": "jitter",
   "license": "ISC",
   "dependencies": {
     "yargs": "^13.2.1"
