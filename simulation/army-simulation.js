@@ -1,11 +1,11 @@
-let Army = function (h, e, aT, sG) {
+let MyArmy = function (h, e, aT, sG) {
     this.horses = h || 0;
     this.elephants = e || 0;
     this.armouredTanks = aT || 0;
     this.slingGuns = sG || 0;
 }
 
-Army.prototype.getArmy = function() {
+MyArmy.prototype.getArmy = function() {
     return this.horses + ' H, ' +
            this.elephants + ' E, ' +
            this.armouredTanks + ' AT, ' +
@@ -13,7 +13,7 @@ Army.prototype.getArmy = function() {
 }
 
 // Function to validate the input provided by the user
-Army.prototype.ValidateArmy = function(army, fn) {
+MyArmy.prototype.ValidateArmy = function(army, fn) {
     let res = {
         isValid: false,
         error: null,
@@ -121,7 +121,7 @@ let getDefenseArmyCombination = function(attackArmyObj, defenseArmyObj) {
     }
         
     let result = {
-        army: new Army(newDefenseArmyArr[0], newDefenseArmyArr[1], newDefenseArmyArr[2], newDefenseArmyArr[3]),
+        army: new MyArmy(newDefenseArmyArr[0], newDefenseArmyArr[1], newDefenseArmyArr[2], newDefenseArmyArr[3]),
         warOutcome: (newDefenseArmyArr.reduce(sumArray) * 2) >=  attackArmyArr.reduce(sumArray) ? 'wins' : 'loses'
     };
 
@@ -134,6 +134,6 @@ let sumArray = (sum, currentValue) => {
 
 
 module.exports = {
-    Army,
+    MyArmy,
     getDefenseArmyCombination
 }
