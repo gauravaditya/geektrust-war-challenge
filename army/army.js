@@ -70,8 +70,6 @@ class Army {
 
 }
 
-
-
 module.exports = {
   Army
 };
