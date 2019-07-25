@@ -31,10 +31,10 @@ class Army {
   }
 
   deployDefense(h, e, aT, sG) {
-    let reqHorses = Math.ceil(h / this.armyStrength);
-    let reqElephants = Math.ceil(e / this.armyStrength);
-    let reqTanks = Math.ceil(aT / this.armyStrength);
-    let reqGuns = Math.ceil(sG / this.armyStrength);
+    let reqHorses = utils.toHigherStrength(h, this.armyStrength);
+    let reqElephants = utils.toHigherStrength(e, this.armyStrength);
+    let reqTanks = utils.toHigherStrength(aT, this.armyStrength);
+    let reqGuns = utils.toHigherStrength(sG, this.armyStrength);
 
     this.horses.deployUnit(reqHorses, this.defend);
     this.elephants.deployUnit(reqElephants, this.defend);

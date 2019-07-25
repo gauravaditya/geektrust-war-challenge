@@ -1,10 +1,12 @@
 exports.utils = {
-  toHigherStrength: count => {
-    return Math.ceil(count / 2);
+  toHigherStrength: (count, strength) => {
+    strength = strength || 2;
+    return Math.ceil(count / strength);
   },
 
-  toLowerStrength: count => {
-    return count * 2;
+  toLowerStrength: (count, strength) => {
+    strength = strength || 2;
+    return count * strength;
   },
 
   getWarOutcome: (defender) => {
