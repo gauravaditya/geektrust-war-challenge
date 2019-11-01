@@ -25,7 +25,7 @@ const argv = yargs
   })
   .usage("Usage: $0 <command> [options]")
   .example("$0 attack -h 10 -e 15 -t 5 -g 4")
-  .demandCommand(1, "please use command to execute")
+  .demandCommand(0, "please use command to execute")
   .showHelpOnFail(true, "Specify --help for available options")
   .help("help").argv;
 

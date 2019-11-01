@@ -89,84 +89,94 @@ describe('Test methods for Army Class: ', () => {
 });
 
 describe('Winning Criteria Defense Tests: ', () => {
-    it('should give output as -> Lengaburu deploys 52 H, 50 E, 10 AT, 3 SG and wins', () => {
+    it('should give output as -> LENGABURU_WINS_FALICORNIA 52H 50E 10AT 3SG', () => {
         let defenseArmy = kingShan.deployDefense(100, 101, 20, 5);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 52 H, 50 E, 10 AT, 3 SG and Wins'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_WINS_FALICORNIA 52H 50E 10AT 3SG'));
 
     });
 
-    it('should give output as -> Lengaburu deploys 75 H, 50 E, 10 AT, 5 SG and Wins', () => {
+    it('should give output as -> LENGABURU_WINS_FALICORNIA 75H 50E 10AT 5SG', () => {
         let defenseArmy = kingShan.deployDefense(150, 96, 26, 8);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 75 H, 50 E, 10 AT, 5 SG and Wins'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_WINS_FALICORNIA 75H 50E 10AT 5SG'));
     });
 
-    it('should give output as -> Lengaburu deploys 100 H, 38 E, 2 AT, 1 SG and Wins', () => {
+    it('should give output as -> LENGABURU_WINS_FALICORNIA 100H 38E 2AT 1SG', () => {
         let defenseArmy = kingShan.deployDefense(250, 50, 3, 1);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 100 H, 38 E, 2 AT, 1 SG and Wins'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_WINS_FALICORNIA 100H 38E 2AT 1SG'));
     });
 
-    it('should give output as -> Lengaburu deploys 100 H, 38 E, 7 AT, 5 SG and Wins', () => {
+    it('should give output as -> LENGABURU_WINS_FALICORNIA 100H 38E 7AT 5SG', () => {
         let defenseArmy = kingShan.deployDefense(250, 50, 13, 10);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 100 H, 38 E, 7 AT, 5 SG and Wins'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_WINS_FALICORNIA 100H 38E 7AT 5SG'));
     });
 
-    it('should give output as -> Lengaburu deploys 100 H, 38 E, 5 AT, 5 SG and Wins', () => {
+    it('should give output as -> LENGABURU_WINS_FALICORNIA 100H 38E 5AT 5SG', () => {
         let defenseArmy = kingShan.deployDefense(250, 50, 10, 10);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 100 H, 38 E, 5 AT, 5 SG and Wins'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_WINS_FALICORNIA 100H 38E 5AT 5SG'));
     });
 
-    it('should give output as -> Lengaburu deploys 100 H, 11 E, 0 AT, 0 SG and Wins', () => {
+    it('should give output as -> LENGABURU_WINS_FALICORNIA 100H 11E 0AT 0SG', () => {
         let defenseArmy = kingShan.deployDefense(204, 20, 0, 0);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 100 H, 11 E, 0 AT, 0 SG and Wins'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_WINS_FALICORNIA 100H 11E 0AT 0SG'));
     });
 });
 
 describe('Losing Criteria Defense Tests: ', () => {
-    it('should give output as -> Lengaburu deploys 100 H, 38 E, 10 AT, 5 SG and Loses', () => {
+    it('should give output as -> LENGABURU_LOSES_FALICORNIA 100H 38E 10AT 5SG', () => {
         let defenseArmy = kingShan.deployDefense(250, 50, 20, 15);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 100 H, 38 E, 10 AT, 5 SG and Loses'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_LOSES_FALICORNIA 100H 38E 10AT 5SG'));
     });
 
-    it('should give output as -> Lengaburu deploys 100 H, 50 E, 10 AT, 5 SG and Loses', () => {
+    it('should give output as -> LENGABURU_LOSES_FALICORNIA 100H 50E 10AT 5SG', () => {
         let defenseArmy = kingShan.deployDefense(250, 80, 30, 15);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 100 H, 50 E, 10 AT, 5 SG and Loses'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_LOSES_FALICORNIA 100H 50E 10AT 5SG'));
     });
 
-    it('should give output as -> Lengaburu deploys 25 H, 25 E, 10 AT, 5 SG and Loses', () => {
+    it('should give output as -> LENGABURU_LOSES_FALICORNIA 25H 25E 10AT 5SG', () => {
         let defenseArmy = kingShan.deployDefense(50, 50, 20, 19);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 25 H, 25 E, 10 AT, 5 SG and Loses'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_LOSES_FALICORNIA 25H 25E 10AT 5SG'));
     });
 
-    it('should give output as -> Lengaburu deploys 100 H, 50 E, 10 AT, 5 SG and Loses', () => {
+    it('should give output as -> LENGABURU_LOSES_FALICORNIA 100H 50E 10AT 5SG', () => {
         let defenseArmy = kingShan.deployDefense(201, 101, 22, 10);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 100 H, 50 E, 10 AT, 5 SG and Loses'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_LOSES_FALICORNIA 100H 50E 10AT 5SG'));
     });
 
-    it('should give output as -> Lengaburu deploys 100 H, 50 E, 10 AT, 5 SG and Loses', () => {
+    it('should give output as -> LENGABURU_LOSES_FALICORNIA 100H 50E 10AT 5SG', () => {
         let defenseArmy = kingShan.deployDefense(201, 100, 20, 10);
         let res = utils.getWarOutcome(defenseArmy);
 
-        expect(res.trim()).toEqual(expect.stringMatching('Lengaburu deploys 100 H, 50 E, 10 AT, 5 SG and Loses'));
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_LOSES_FALICORNIA 100H 50E 10AT 5SG'));
+    });
+});
+
+describe('Edge cases:', () => {
+    
+    it('should give output as -> LENGABURU_WINS_FALICORNIA 50H 31E 10AT 3SG', () => {
+        let defenseArmy = kingShan.deployDefense(100, 50, 26, 5);
+        let res = utils.getWarOutcome(defenseArmy);
+
+        expect(res.trim()).toEqual(expect.stringMatching('LENGABURU_WINS_FALICORNIA 50H 31E 10AT 3SG'));
     });
 
 });

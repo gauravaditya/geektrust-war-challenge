@@ -10,23 +10,13 @@ exports.utils = {
   },
 
   getWarOutcome: (defender) => {
-    let horses = defender.horses.backupUnits;
-    let elephants = defender.elephants.backupUnits;
-    let tanks = defender.armouredTanks.backupUnits;
-    let guns = defender.slingGuns.backupUnits;
-    let result = 'Wins';
-    let outcome = `Lengaburu deploys ${defender.horses.deployedUnits} ${
-      defender.horses.shortName
-    }, ${defender.elephants.deployedUnits} ${defender.elephants.shortName}, ${
-      defender.armouredTanks.deployedUnits
-    } ${defender.armouredTanks.shortName}, ${
-      defender.slingGuns.deployedUnits
-    } ${defender.slingGuns.shortName} and `;
+    let result = 'LENGABURU_WINS_FALICORNIA';
+    let outcome = `${defender.horses.deployedUnits}${defender.horses.shortName} ${defender.elephants.deployedUnits}${defender.elephants.shortName} ${defender.armouredTanks.deployedUnits}${defender.armouredTanks.shortName} ${defender.slingGuns.deployedUnits}${defender.slingGuns.shortName}`;
 
-    if (horses + elephants + tanks + guns > 0) {
-      result = "Loses";
+    if (defender.needBackUp()) {
+      result = "LENGABURU_LOSES_FALICORNIA";
     }
 
-    return outcome + result;
+    return result + " " + outcome;
   }
 };

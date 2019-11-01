@@ -11,6 +11,10 @@ class Army {
     this.armyStrength = strength || 1;
   }
 
+  needBackUp() {
+    return this.horses.needBackUp || this.elephants.needBackUp || this.armouredTanks.needBackUp || this.slingGuns.needBackUp;
+  }
+
   deployArmy(h, e, aT, sG, fn) {
     try {
       this.horses.deployUnit(h);
@@ -66,6 +70,8 @@ class Army {
         )
       );
     }
+
+    primaryUnit.needBackUp = primaryUnit.backupUnits > 0;
   }
 
 }

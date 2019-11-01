@@ -4,7 +4,8 @@
   "description": "war challenge code",
   "main": "app.js",
   "scripts": {
-    "test": "mocha **/*.test.js"
+    "test": "mocha **/*.test.js",
+    "start": "node app.js"
   },
   "author": "jitter",
   "license": "ISC",
